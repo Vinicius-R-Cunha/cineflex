@@ -82,11 +82,11 @@
     background-color: #8DD7CF;
     border: 1px solid #1AAE9E;
 }
-.seats-list .avaiable {
+.seats-list .available {
     background-color: #C3CFD9;
     border: 1px solid #7B8B99;
 }
-.seats-list .not-avaiable {
+.seats-list .not-available {
     background-color: #FBE192;
     border: 1px solid #F7C52B;
 }
