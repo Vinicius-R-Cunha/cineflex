@@ -1,9 +1,10 @@
 import './style.css';
+import loading from '../../assets/loading.gif';
+import { useEffect, useState } from 'react';
+import { useParams, Link } from 'react-router-dom';
+import axios from 'axios';
 import Header from '../Header';
 import Footer from '../Footer';
-import { useParams } from 'react-router-dom';
-import { useEffect, useState } from 'react';
-import axios from 'axios';
 
 export default function SchedulePage() {
     const { idFilme } = useParams();
@@ -16,7 +17,7 @@ export default function SchedulePage() {
 
     if (!session) {
         return (
-            <p>Carregando...</p>
+            <img src={loading} alt="" />
         )
     }
 
@@ -31,14 +32,18 @@ export default function SchedulePage() {
                         <div key={item.id}>
                             <p className='day'>{item.weekday} - {item.date}</p>
                             <div className='times'>
-                                {item.showtimes.map(time => <div className='time' key={time.id}>{time.name}</div>)}
+                                {item.showtimes.map(time =>
+                                    <Link to={`/assentos/${time.id}`} key={time.id}>
+                                        <div className='time'>{time.name}</div>
+                                    </Link>
+                                )}
                             </div>
                         </div>
                     )
                 })}
             </div>
 
-            <Footer title={session.title} />
+            <Footer title={session.title} image={session.posterURL} time='' day='' />
         </>
     )
 }

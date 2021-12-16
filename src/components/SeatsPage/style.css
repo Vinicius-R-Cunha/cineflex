@@ -1,0 +1,151 @@
+.select-seats {
+    width: 100%;
+
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 28px;
+    letter-spacing: 0.04em;
+    color: #293845;
+
+    margin: 37px 0 25px 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.seats-list {
+    width: 87%;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    gap: 7px;
+}
+
+.seats-list .seat {
+    width: 26px;
+    height: 26px;
+
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 13px;
+    letter-spacing: 0.04em;
+    color: #000000;
+
+    background-color: #C3CFD9;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-bottom: 11px;
+
+    border: 1px solid #808F9D;
+    box-sizing: border-box;
+    border-radius: 12px;
+}
+
+.seats-list .subtitle {
+    width: 80%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.seats-list .subtitle div {
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 15px;
+    letter-spacing: -0.013em;
+    color: #4E5A65;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.seats-list .subtitle div div {
+    width: 24px;
+    height: 24px;
+
+    margin-bottom: 5px;
+
+    box-sizing: border-box;
+    border-radius: 17px;
+}
+
+.seats-list .selected {
+    background-color: #8DD7CF;
+    border: 1px solid #1AAE9E;
+}
+.seats-list .avaiable {
+    background-color: #C3CFD9;
+    border: 1px solid #7B8B99;
+}
+.seats-list .not-avaiable {
+    background-color: #FBE192;
+    border: 1px solid #F7C52B;
+}
+
+.inputs-div {
+    width: 87%;
+
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    color: #293845;
+
+
+    display: flex;
+    flex-direction: column;
+
+    margin-top: 50px;
+}
+
+.inputs-div input {
+    width: 327px;
+    height: 51px;
+
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    text-indent: 18px;
+
+    margin-top: 2px;
+    margin-bottom: 10px;
+
+    background-color: #FFFFFF;
+
+    border: 1px solid #D5D5D5;
+    box-sizing: border-box;
+    border-radius: 3px;
+}
+
+.inputs-div input::placeholder {
+    color: #AFAFAF;
+}
+
+.book-seats {
+    width: 225px;
+    height: 42px;
+
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    letter-spacing: 0.04em;
+    color: #FFFFFF;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 47px;
+
+    background-color: #E8833A;
+
+    border-radius: 3px;
+}
