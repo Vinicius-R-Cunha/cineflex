@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import './style.css'
+import { Link } from 'react-router-dom';
+import './style.css';
 
 export default function Posters() {
 
@@ -8,7 +9,7 @@ export default function Posters() {
 
     useEffect(() => {
         const promise = axios.get("https://mock-api.driven.com.br/api/v4/cineflex/movies");
-        promise.then(resposta => setPosters(resposta.data));
+        promise.then(answer => setPosters(answer.data));
     }, []);
 
     return (
@@ -16,9 +17,11 @@ export default function Posters() {
             <p className='select-movie-title'>Selecione o filme</p>
             <div className='posters'>
                 {posters.map(item =>
-                    <div className='poster' key={item.id}>
-                        <img className='main-image' src={item.posterURL} alt="" />
-                    </div>
+                    <Link to={`/sessoes/${item.id}`} key={item.id}>
+                        <div className='poster' >
+                            <img className='main-image' src={item.posterURL} alt="" />
+                        </div>
+                    </Link>
                 )}
             </div>
         </>

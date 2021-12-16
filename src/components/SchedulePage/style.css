@@ -1,0 +1,54 @@
+.select-session-title {
+    width: 374px;
+    height: 102px;
+
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 28px;
+    letter-spacing: 0.04em;
+    color: #293845;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sessions {
+    width: 87%;
+}
+
+.sessions .day {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+    letter-spacing: 0.02em;
+    color: #293845;
+
+    margin-bottom: 23px;
+}
+
+.sessions .times {
+    display: flex;
+
+    gap: 8px;
+
+    margin-bottom: 23px;
+}
+
+.sessions .time {
+    width: 83px;
+    height: 43px;
+
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    letter-spacing: 0.02em;
+    color: #FFFFFF;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #E8833A;
+    border-radius: 3px;
+}
