@@ -27,34 +27,26 @@ export default function SeatsPage() {
     }
 
     function clickSeat(seat) {
-        if (seat.isAvailable && !seat.selected) {
-            setSeatsArray(() => toggleSeat('select', seat));
-        } else if (seat.isAvailable && seat.selected) {
-            setSeatsArray(() => toggleSeat('deselect', seat));
-        } else if (!seat.isAvailable) {
+        if (seat.isAvailable) {
+            setSeatsArray(() => {
+                const newArray = [];
+                let newObject = {};
+                for (let i = 0; i < seatsArray.length; i++) {
+                    if (seatsArray[i].id === seat.id) {
+                        newObject = { ...seatsArray[i] };
+                        newObject.selected = !newObject.selected;
+                        newArray.push(newObject);
+                    } else {
+                        newArray.push(seatsArray[i]);
+                    }
+                }
+                return newArray;
+            });
+
+        } else {
             alert("Esse assento não está disponível");
             return;
         }
-    }
-
-    function toggleSeat(param, seat) {
-        const newArray = [];
-        let newObject = {};
-        for (let i = 0; i < seatsArray.length; i++) {
-            if (seatsArray[i].id === seat.id) {
-                newObject = { ...seatsArray[i] };
-                if (param === 'select') {
-                    newObject.selected = true;
-                } else if (param === 'deselect') {
-                    newObject.selected = false;
-                }
-                newArray.push(newObject);
-
-            } else {
-                newArray.push(seatsArray[i]);
-            }
-        }
-        return newArray;
     }
 
     if (!seats || seatsArray.length === 0) {
