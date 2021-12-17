@@ -21,7 +21,6 @@ export default function SeatsPage({ seats, setSeats, name, setName, cpf, setCpf,
             setSeats(answer.data);
             setSeatsArray([...answer.data.seats.map(object => object = { ...object, selected: false })]);
         });
-
     }, [idSessao, setSeats, setSeatsArray])
 
     function clickSeat(seat) {
@@ -55,16 +54,17 @@ export default function SeatsPage({ seats, setSeats, name, setName, cpf, setCpf,
 
     if (!seats || seatsArray.length === 0) {
         return (
-            <img src={loading} alt="" />
+            <img className='loading-gif' src={loading} alt="" />
         )
     }
+
     return (
         <>
             <Header />
+
             <p className='select-seats'>Selecione o(s) assento(s)</p>
 
             <div className='seats-list'>
-
                 {seatsArray.map(seat => {
                     return (
                         <div className={`seat ${seat.isAvailable ? '' : 'not-available'} ${seat.selected ? 'selected' : ''}`}

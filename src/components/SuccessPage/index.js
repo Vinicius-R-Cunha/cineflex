@@ -15,6 +15,7 @@ export default function SuccessPage({ seats, setSeats, name, setName, cpf, setCp
     return (
         <>
             <Header />
+
             <p className="success-page-title">Pedido feito<br />com sucesso!</p >
 
             <div className='success-content'>
@@ -31,8 +32,8 @@ export default function SuccessPage({ seats, setSeats, name, setName, cpf, setCp
                 <p className='title'>Comprador</p>
                 <p className='info'>Nome: {name}</p>
                 <p className='info'>CPF: {cpf}</p>
-
             </div>
+
             <NavigationButton link={'/'} text={'Voltar pra Home'} margin={'margin-top'} click={resetStates} />
         </>
     );

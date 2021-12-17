@@ -17,7 +17,7 @@ export default function SchedulePage() {
 
     if (!session) {
         return (
-            <img src={loading} alt="" />
+            <img className='loading-gif' src={loading} alt="" />
         )
     }
 
@@ -26,6 +26,7 @@ export default function SchedulePage() {
             <Header />
 
             <p className='select-session-title'>Selecione o horário</p>
+
             <div className="sessions">
                 {session.days.map(item => {
                     return (

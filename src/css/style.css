@@ -14,3 +14,7 @@ body {
 a {
     text-decoration: none;
 }
+
+.loading-gif {
+    margin-top: 220px;
+}

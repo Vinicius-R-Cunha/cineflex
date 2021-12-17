@@ -11,18 +11,13 @@ export default function App() {
     const [name, setName] = useState('');
     const [cpf, setCpf] = useState('');
 
-    console.log(seats);
-    console.log(seatsArray);
-    console.log(name);
-    console.log(cpf);
-
     return (
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={<MainMenu />}></Route>
                 <Route path="/sessoes/:idFilme" element={<SchedulePage />}></Route>
                 <Route path="/assentos/:idSessao" element={<SeatsPage seats={seats} setSeats={setSeats} name={name} setName={setName} cpf={cpf} setCpf={setCpf} seatsArray={seatsArray} setSeatsArray={setSeatsArray} />}></Route>
-                <Route path="/sucesso" element={<SuccessPage seats={seats} name={name} cpf={cpf} seatsArray={seatsArray} setSeats={setSeats} setName={setName} setCpf={setCpf} setSeatsArray={setSeatsArray} />}></Route>
+                <Route path="/sucesso" element={<SuccessPage seats={seats} setSeats={setSeats} name={name} setName={setName} cpf={cpf} setCpf={setCpf} seatsArray={seatsArray} setSeatsArray={setSeatsArray} />}></Route>
             </Routes>
         </BrowserRouter>
     );
