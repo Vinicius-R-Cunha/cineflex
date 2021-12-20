@@ -22,7 +22,7 @@ export default function MainMenu() {
 
     return (
         <>
-            <Header />
+            <Header previousPage={''} />
 
             <p className='select-movie-title'>Selecione o filme</p>
 

@@ -9,6 +9,8 @@ import NavigationButton from '../NavigationButton';
 
 export default function SeatsPage({ seats, setSeats, name, setName, cpf, setCpf, seatsArray, setSeatsArray }) {
     const { idSessao } = useParams();
+    localStorage.setItem('idSessao', idSessao);
+    const idFilme = localStorage.getItem('idFilme');
     const subtitleArray = [
         { class: 'selected', text: 'Selecionado' },
         { class: 'available', text: 'Disponível' },
@@ -60,7 +62,7 @@ export default function SeatsPage({ seats, setSeats, name, setName, cpf, setCpf,
 
     return (
         <>
-            <Header />
+            <Header previousPage={`/sessoes/${idFilme}`} />
 
             <p className='select-seats'>Selecione o(s) assento(s)</p>
 

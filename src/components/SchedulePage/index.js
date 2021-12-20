@@ -8,6 +8,7 @@ import Footer from '../Footer';
 
 export default function SchedulePage() {
     const { idFilme } = useParams();
+    localStorage.setItem('idFilme', idFilme);
     const [session, setSession] = useState();
 
     useEffect(() => {
@@ -23,7 +24,7 @@ export default function SchedulePage() {
 
     return (
         <>
-            <Header />
+            <Header previousPage={'/'} />
 
             <p className='select-session-title'>Selecione o horário</p>
 

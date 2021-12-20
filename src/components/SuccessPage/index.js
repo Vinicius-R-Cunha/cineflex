@@ -4,17 +4,19 @@ import NavigationButton from '../NavigationButton';
 
 export default function SuccessPage({ seats, setSeats, name, setName, cpf, setCpf, seatsArray, setSeatsArray }) {
     const { day, movie } = seats;
+    const idSessao = localStorage.getItem('idSessao');
 
     function resetStates() {
         setSeats();
         setSeatsArray([]);
         setName('');
         setCpf('');
+        localStorage.clear();
     }
 
     return (
         <>
-            <Header />
+            <Header previousPage={`/assentos/${idSessao}`} />
 
             <p className="success-page-title">Pedido feito<br />com sucesso!</p >
 
