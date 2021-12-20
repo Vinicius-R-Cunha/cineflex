@@ -1,7 +1,6 @@
 body {
     font-family: 'Roboto', sans-serif;
     background-color: #FFFFFF;
-    padding-top: 67px;
 }
 
 .root {
@@ -9,6 +8,9 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    
+    padding-top: 67px;
+    padding-bottom: 140px;
 }
 
 a {

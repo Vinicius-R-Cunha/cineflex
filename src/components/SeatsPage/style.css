@@ -53,6 +53,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    margin-bottom: 50px;
 }
 
 .seats-list .subtitle div {
@@ -99,11 +101,10 @@
     line-height: 21px;
     color: #293845;
 
-
     display: flex;
     flex-direction: column;
 
-    margin-top: 50px;
+    margin-bottom: 15px;
 }
 
 .inputs-div input {

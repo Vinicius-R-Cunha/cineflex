@@ -21,7 +21,7 @@ export default function MainMenu() {
     }
 
     return (
-        <>
+        <div className='main-page'>
             <Header previousPage={''} />
 
             <p className='select-movie-title'>Selecione o filme</p>
@@ -35,6 +35,6 @@ export default function MainMenu() {
                     </Link>
                 )}
             </div>
-        </>
+        </div>
     );
 }
