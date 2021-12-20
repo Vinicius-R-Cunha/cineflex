@@ -42,16 +42,18 @@ export default function SeatsPage({ seats, setSeats, name, setName, cpf, setCpf,
     }
 
     function bookSeats() {
-        const ids = [];
-        for (let i = 0; i < seatsArray.length; i++) {
-            if (seatsArray[i].selected) {
-                ids.push(seatsArray[i].id);
+        if (name !== '' && cpf !== '') {
+            const ids = [];
+            for (let i = 0; i < seatsArray.length; i++) {
+                if (seatsArray[i].selected) {
+                    ids.push(seatsArray[i].id);
+                }
             }
-        }
 
-        const book = axios.post("https://mock-api.driven.com.br/api/v4/cineflex/seats/book-many", { ids, name, cpf });
-        book.then(answer => console.log(answer));
-        book.catch(answer => console.log(answer));
+            const book = axios.post("https://mock-api.driven.com.br/api/v4/cineflex/seats/book-many", { ids, name, cpf });
+            book.then(answer => console.log(answer));
+            book.catch(answer => console.log(answer));
+        }
     }
 
     if (!seats || seatsArray.length === 0) {
@@ -92,7 +94,7 @@ export default function SeatsPage({ seats, setSeats, name, setName, cpf, setCpf,
                 <input type="text" placeholder='Digite seu CPF...' onChange={e => setCpf(e.target.value)} value={cpf} />
             </div>
 
-            <NavigationButton link={'/sucesso'} text={'Reservar assento(s)'} margin={''} click={bookSeats} />
+            <NavigationButton link={(name !== '' & cpf !== '') ? '/sucesso' : ''} text={'Reservar assento(s)'} margin={''} click={bookSeats} />
 
             <Footer title={seats.movie.title} image={seats.movie.posterURL} time={seats.name} day={seats.day.weekday} />
         </>
