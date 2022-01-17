@@ -9,8 +9,8 @@ export default function SuccessPage({ seats, setSeats, name, setName, cpf, setCp
     function resetStates() {
         setSeats();
         setSeatsArray([]);
-        setName('');
-        setCpf('');
+        setName([]);
+        setCpf([]);
         localStorage.clear();
     }
 

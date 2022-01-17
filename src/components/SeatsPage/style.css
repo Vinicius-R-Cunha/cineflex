@@ -103,7 +103,9 @@
 
     display: flex;
     flex-direction: column;
+}
 
+.inputs-div div {
     margin-bottom: 15px;
 }
 

@@ -1,6 +1,6 @@
 import './style.css';
 import loading from '../../assets/loading.gif'
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import Header from '../Header';
@@ -16,6 +16,7 @@ export default function SeatsPage({ seats, setSeats, name, setName, cpf, setCpf,
         { class: 'available', text: 'Disponível' },
         { class: 'not-available', text: 'Indisponível' }
     ]
+    const [inputsDiv, setInputsDiv] = useState('');
 
     useEffect(() => {
         const promise = axios.get(`https://mock-api.driven.com.br/api/v4/cineflex/showtimes/${idSessao}/seats`);
@@ -35,6 +36,10 @@ export default function SeatsPage({ seats, setSeats, name, setName, cpf, setCpf,
                 }
                 return [...seatsArray];
             });
+            console.log(seatsArray);
+
+            setInputsDiv('show');
+
         } else {
             alert("Esse assento não está disponível");
             return;
@@ -87,12 +92,16 @@ export default function SeatsPage({ seats, setSeats, name, setName, cpf, setCpf,
                 </div>
             </div>
 
-            <div className='inputs-div'>
-                Nome do comprador:
-                <input type="text" placeholder='Digite seu nome...' onChange={e => setName(e.target.value)} value={name} />
-                CPF do comprador:
-                <input type="text" placeholder='Digite seu CPF...' onChange={e => setCpf(e.target.value)} value={cpf} />
-            </div>
+            {inputsDiv !== '' && <div className='inputs-div'>
+                {seatsArray.map(obj => obj.selected &&
+                    <div key={obj.id}>
+                        Nome do cliente do assento {obj.name}:
+                        <input type="text" placeholder='Digite o nome...' onChange={e => setName(e.target.value)} />
+                        CPF do cliente do assento {obj.name}:
+                        <input type="text" placeholder='Digite o CPF...' onChange={e => setCpf(e.target.value)} />
+                    </div>
+                )}
+            </div>}
 
             <NavigationButton link={(name !== '' & cpf !== '') ? '/sucesso' : ''} text={'Reservar assento(s)'} margin={''} click={bookSeats} />
 
