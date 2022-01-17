@@ -36,8 +36,6 @@ export default function SeatsPage({ seats, setSeats, name, setName, cpf, setCpf,
                 }
                 return [...seatsArray];
             });
-            console.log(seatsArray);
-
             setInputsDiv('show');
 
         } else {
@@ -56,7 +54,6 @@ export default function SeatsPage({ seats, setSeats, name, setName, cpf, setCpf,
             }
 
             const book = axios.post("https://mock-api.driven.com.br/api/v4/cineflex/seats/book-many", { ids, name, cpf });
-            book.then(answer => console.log(answer));
             book.catch(answer => console.log(answer));
         }
     }
