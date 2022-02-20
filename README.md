@@ -27,6 +27,10 @@ The following tools and frameworks were used in the construction of the project:
 ```bash
 $ git clone https://github.com/Vinicius-R-Cunha/cineflex.git
 ```
+### Access the directory where you cloned it
+```bash
+$ cd cineflex
+```
 
 ### Install dependencies
 
@@ -39,10 +43,4 @@ $ npm i
 $ npm start
 ```
 
-### Or you can build the project running
-
-```bash
-$ npm run build
-```
-
-### And then access http://localhost:3000 on your browser
+### This command will open your favorite browser and access http://localhost:3000 by default
