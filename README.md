@@ -1,5 +1,5 @@
 # CineFlex
-A mainly mobile movie booking app written in React. Book your seats for a movie choosing an avaiable date and see your confirmation page.
+A mainly mobile front-end movie booking app written in React. Book your seats for a movie choosing an avaiable date and see your confirmation page.
 
 ![CineFlex](https://user-images.githubusercontent.com/92492685/150708997-a44a3ddc-5f63-45fe-b93c-33a5460c65c3.gif)
 
